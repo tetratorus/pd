@@ -30,7 +30,7 @@ function getQuestRate() {
 
 function getMultiplierGachaRate() {
   const dec = BASE_DAILY_MULTIPLIER_GACHA_RATE + Math.random() * (MAX_DAILY_MULTIPLIER_GACHA_RATE - BASE_DAILY_MULTIPLIER_GACHA_RATE);
-  return Math.floor(dec * 100)/100
+  return Math.floor(dec * 100) / 100
 }
 
 function getFollowers() {
@@ -463,29 +463,33 @@ async function worldSim() {
     for (const user of Object.values(users)) {
       usersArray.push(user);
     }
-    const leaderboard = usersArray.sort((a, b) => (b.points*b.multiplier) - (a.points*a.multiplier)).map((a, i) => { return { 
-      position: i + 1,
-      id: a.id.slice(0, 10),
-      referrer: a.referrerId ? a.referrerId.slice(0,10) : null,
-      followers: a.followers,
-      questRate: a.questRate,
-      "gacha%": a.multiplierGachaRate,
-      age: a.age,
-      t1: a.tier1Referrals,
-      t2: a.tier2Referrals,
-      // tier3Referrals: a.tier3Referrals,
-      mul: a.multiplier,
-      quests: a.questPoints,
-      finalPoints: a.multiplier * a.points,
-    } });
+    const leaderboard = usersArray.sort((a, b) => (b.points * b.multiplier) - (a.points * a.multiplier));
+
+    const displayFormat = function (a, i) {
+      return {
+        position: i + 1,
+        id: a.id.slice(0, 10),
+        referrer: a.referrerId ? a.referrerId.slice(0, 10) : null,
+        followers: a.followers,
+        questRate: a.questRate,
+        "gacha%": a.multiplierGachaRate,
+        age: a.age,
+        t1: a.tier1Referrals,
+        t2: a.tier2Referrals,
+        // tier3Referrals: a.tier3Referrals,
+        mul: a.multiplier,
+        quests: a.questPoints,
+        finalPoints: a.multiplier * a.points,
+      }
+    }
 
     //  If there are less than 30 users, just print everything. If there are more than 45 users, print the first 15, and then the last 15, and then the 15 in the middle.
     if (leaderboard.length <= 30) {
       console.table(leaderboard);
     } else {
-      console.table(leaderboard.slice(0, 10));
-      console.table(leaderboard.slice(leaderboard.length / 2 - 5, leaderboard.length / 2 + 5));
-      console.table(leaderboard.slice(leaderboard.length - 10));
+      console.table(leaderboard.slice(0, 10).map(displayFormat));
+      console.table(leaderboard.slice(leaderboard.length / 2 - 5, leaderboard.length / 2 + 5).map(displayFormat));
+      console.table(leaderboard.slice(leaderboard.length - 10).map(displayFormat));
 
       // console.table(leaderboard.slice(0, 15));
       // console.table(leaderboard.slice(leaderboard.length / 2 - 7, leaderboard.length / 2 + 7));

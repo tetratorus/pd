@@ -1,0 +1,110 @@
+Statistical profiling result from isolate-0x130040000-22015-v8.log, (41216 ticks, 203 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+     96    0.2%          /usr/lib/system/libsystem_malloc.dylib
+     39    0.1%          /usr/lib/system/libsystem_c.dylib
+     31    0.1%          /usr/lib/system/libsystem_pthread.dylib
+     18    0.0%          /usr/lib/libc++.1.dylib
+      9    0.0%          /usr/lib/system/libsystem_kernel.dylib
+      3    0.0%          /usr/lib/system/libsystem_platform.dylib
+      2    0.0%          /usr/lib/system/libdyld.dylib
+      2    0.0%          /usr/lib/libc++abi.dylib
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+    397    1.0%    1.0%  LazyCompile: *worldSim /Users/lentan/repo/points-dashboard-sim/main.js:373:24
+      4    0.0%    0.0%  LazyCompile: *<anonymous> /Users/lentan/repo/points-dashboard-sim/main.js:403:60
+      3    0.0%    0.0%  RegExp: [\u001B\u009B][[\]()#;?]*(?:(?:(?:(?:;[-a-zA-Z\d\/#&.:=?%@~_]+)*|[a-zA-Z\d]+(?:;[-a-zA-Z\d\/#&.:=?%@~_]*)*)?\u0007)|(?:(?:\d{1,4}(?:;\d{0,4})*)?[\dA-PR-TZcf-ntqry=><~]))
+      3    0.0%    0.0%  LazyCompile: *getBufferedUUID node:internal/crypto/random:388:25
+      3    0.0%    0.0%  LazyCompile: *addPoints /Users/lentan/repo/points-dashboard-sim/user.js:60:12
+      2    0.0%    0.0%  LazyCompile: *serializeUUID node:internal/crypto/random:363:23
+      2    0.0%    0.0%  LazyCompile: *<anonymous> /Users/lentan/repo/points-dashboard-sim/main.js:447:34
+      2    0.0%    0.0%  Function: ^worldSim /Users/lentan/repo/points-dashboard-sim/main.js:373:24
+      1    0.0%    0.0%  LazyCompile: *upgradeGacha /Users/lentan/repo/points-dashboard-sim/multiplier.js:14:22
+      1    0.0%    0.0%  LazyCompile: *table node:internal/cli_table:55:15
+      1    0.0%    0.0%  LazyCompile: *stylizeWithColor node:internal/util/inspect:561:26
+      1    0.0%    0.0%  LazyCompile: *formatValue node:internal/util/inspect:766:21
+      1    0.0%    0.0%  LazyCompile: *createUser /Users/lentan/repo/points-dashboard-sim/user.js:16:20
+      1    0.0%    0.0%  LazyCompile: *<anonymous> /Users/lentan/repo/points-dashboard-sim/main.js:466:41
+      1    0.0%    0.0%  LazyCompile: *<anonymous> /Users/lentan/repo/points-dashboard-sim/main.js:466:106
+      1    0.0%    0.0%  Function: ^table node:internal/cli_table:55:15
+      1    0.0%    0.0%  Function: ^randomFillSync node:internal/crypto/random:119:24
+      1    0.0%    0.0%  Function: ^popAsyncContext node:internal/async_hooks:553:25
+      1    0.0%    0.0%  Function: ^nextTick node:internal/process/task_queues:103:18
+      1    0.0%    0.0%  Function: ^get node:net:2162:6
+      1    0.0%    0.0%  Function: ^get node:internal/bootstrap/node:92:8
+      1    0.0%    0.0%  Function: ^formatNumber node:internal/util/inspect:1576:22
+      1    0.0%    0.0%  Function: ^emitBeforeScript node:internal/async_hooks:509:26
+      1    0.0%    0.0%  Function: ^<anonymous> /Users/lentan/repo/points-dashboard-sim/main.js:466:106
+      1    0.0%    0.0%  Function: ^<anonymous> /Users/lentan/repo/points-dashboard-sim/main.js:447:34
+
+ [C++]:
+   ticks  total  nonlib   name
+  39638   96.2%   96.6%  T node::builtins::BuiltinLoader::LoadBuiltinSource(v8::Isolate*, char const*)
+    312    0.8%    0.8%  T _semaphore_create
+    150    0.4%    0.4%  T _kdebug_is_enabled
+     55    0.1%    0.1%  T _posix_spawnattr_init
+     50    0.1%    0.1%  T _mach_voucher_extract_attr_recipe
+     41    0.1%    0.1%  T _kevent_id
+     33    0.1%    0.1%  T _kdebug_trace_string
+     29    0.1%    0.1%  T ___platform_sigaction
+     25    0.1%    0.1%  T _kevent_qos
+     11    0.0%    0.0%  T _kpersona_info
+      5    0.0%    0.0%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>> std::__1::__pad_and_output<char, std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>>, char const*, char const*, char const*, std::__1::ios_base&, char)
+      5    0.0%    0.0%  t __os_nospin_lock_lock_slow
+      5    0.0%    0.0%  T _OSAtomicDecrement32
+      4    0.0%    0.0%  t std::__1::basic_ostream<char, std::__1::char_traits<char>>& std::__1::__put_character_sequence<char, std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>>&, char const*, unsigned long)
+      4    0.0%    0.0%  t __os_once_gate_broadcast
+      2    0.0%    0.0%  t __os_nospin_lock_unlock_slow
+      2    0.0%    0.0%  T _OSAtomicIncrement32
+      1    0.0%    0.0%  t void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+      1    0.0%    0.0%  t __pthread_set_main_qos
+      1    0.0%    0.0%  t __pthread_bsdthread_init
+      1    0.0%    0.0%  t __os_once_gate_wait
+      1    0.0%    0.0%  t ___commpage_gettimeofday_internal
+      1    0.0%    0.0%  T node::AsyncHooks::push_async_context(double, double, v8::Local<v8::Object>)
+      1    0.0%    0.0%  T _os_unfair_recursive_lock_trylock
+      1    0.0%    0.0%  T ___workq_open
+      1    0.0%    0.0%  T ___pthread_init
+
+ [Summary]:
+   ticks  total  nonlib   name
+    433    1.1%    1.1%  JavaScript
+  40380   98.0%   98.4%  C++
+    408    1.0%    1.0%  GC
+    200    0.5%          Shared libraries
+    203    0.5%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+  39559   98.7%   96.0%  T node::builtins::BuiltinLoader::LoadBuiltinSource(v8::Isolate*, char const*)
+    241    0.6%    0.6%  T _semaphore_create
+    150    0.4%    0.4%  T _kdebug_is_enabled
+     40    0.1%    0.1%  T _kevent_id
+     33    0.1%    0.1%  T _kdebug_trace_string
+     22    0.1%    0.1%  T _kevent_qos
+      6    0.0%    0.0%  T ___platform_sigaction
+      4    0.0%    0.0%  t std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>> std::__1::__pad_and_output<char, std::__1::char_traits<char>>(std::__1::ostreambuf_iterator<char, std::__1::char_traits<char>>, char const*, char const*, char const*, std::__1::ios_base&, char)
+      4    0.0%    0.0%  t std::__1::basic_ostream<char, std::__1::char_traits<char>>& std::__1::__put_character_sequence<char, std::__1::char_traits<char>>(std::__1::basic_ostream<char, std::__1::char_traits<char>>&, char const*, unsigned long)
+      3    0.0%    0.0%  t __os_once_gate_broadcast
+      1    0.0%    0.0%  t void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)
+      1    0.0%    0.0%  t __pthread_set_main_qos
+      1    0.0%    0.0%  t __pthread_bsdthread_init
+      1    0.0%    0.0%  t __os_nospin_lock_unlock_slow
+      1    0.0%    0.0%  t __os_nospin_lock_lock_slow
+      1    0.0%    0.0%  T _os_unfair_recursive_lock_trylock
+      1    0.0%    0.0%  T ___workq_open
+      1    0.0%    0.0%  T _OSAtomicIncrement32
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+  39638   96.2%  T node::builtins::BuiltinLoader::LoadBuiltinSource(v8::Isolate*, char const*)
+  39236   99.0%    T node::builtins::BuiltinLoader::LoadBuiltinSource(v8::Isolate*, char const*)
+  38966   99.3%      LazyCompile: *worldSim /Users/lentan/repo/points-dashboard-sim/main.js:373:24
+  38966  100.0%        T node::builtins::BuiltinLoader::LoadBuiltinSource(v8::Isolate*, char const*)
+
