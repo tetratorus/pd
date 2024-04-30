@@ -463,11 +463,14 @@ async function worldSim() {
     for (const user of Object.values(users)) {
       usersArray.push(user);
     }
-    const leaderboard = usersArray.sort((a, b) => (b.points * b.multiplier) - (a.points * a.multiplier));
+    const leaderboard = usersArray.sort((a, b) => (b.points * b.multiplier) - (a.points * a.multiplier)).map((user, i) => { return {
+      position: i + 1,
+      ...user
+    }});
 
     const displayFormat = function (a, i) {
       return {
-        position: i + 1,
+        position: a.position,
         id: a.id.slice(0, 10),
         referrer: a.referrerId ? a.referrerId.slice(0, 10) : null,
         followers: a.followers,
